@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+[CodingApple](https://online.codingapple.com/course/react-basic/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### React 리액트 기초부터 쇼핑몰 프로젝트까지!
+<details>
+<summary>배울 내용</summary>
 
-## Available Scripts
+    – class 문법 없이 개발하는 2020스타일 easy-mode 리액트
 
-In the project directory, you can run:
+    – 컴포넌트, Props, State를 이용한 웹앱 개발
 
-### `yarn start`
+    – 리액트로 HTML 모듈화해서 개발하는 법
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+    – JSX for 반복문, 이벤트 핸들러 등 어떻게 쓰는지 정확히 알려줌
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+    – 리액트 CLI로 프로젝트 생성, 관리, 빌드하는 법
 
-### `yarn test`
+    – Redux와 context API로 데이터 관리
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    – Ajax 등으로 서버 API 요청하는 법 (을 배울 텐데 Ajax가 뭔지 모르니까 그것부터)
 
-### `yarn build`
+    – 라우터로 페이지 나누기
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    – 리액트에서 CSS 스타일링 잘하는 법 (styled component, SASS)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    – import/destructuring/arrow function 등 필요한 ES6 문법들
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    – 스마트폰에 설치 가능한 Progressive Web App으로 리액트사이트 발행하기
 
-### `yarn eject`
+    – (포트폴리오 자랑용) github pages를 이용해 사이트 발행
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+</details>
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-----
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<details>
+<summary>2-1</summary>
+쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+    - npm, nsx install을 사용했을 때 설치가 오래 걸린다면?
+      -> 구글에 'yarn 1' 검색 후 installer 설치 + 컴퓨터 재시작
+         yarn : npm보다 훨씬 빠른 라이브러리 설치 속도, 안정성을 자랑
+                npm install ~~ => yarn add ~~
+                npm run start => yarn start
 
-## Learn More
+    - 새로운 프로젝트 생성
+      -> 작업 폴더를 VScode 에디터로 오픈한 뒤 터미널 오픈
+         리액트 설치 명령어 입력 npx create-react-app shop
+         shop이라는 폴더를 VScode 에디터로 오픈한 뒤 코딩 시작~
+         터미널에서 yarn start 명령어로 미리보기 띄우기
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    - CSS 쌩코딩하기 귀찮다? Bootstrap 라이브러리를 설치하자
+      -> Bootstrap은 원조 라이브러리이고, 리액트에 맞게 변형한 React Bootstrap을 설치
+         터미널에서 npm install react-bootstrap bootstrap 또는 yarn add react-bootstrap bootstrap
+      -> 때에 따라 특정 스타일을 사용할 때 Bootstrap CSS 파일을 요구하는 경우가 있음
+         사이트에 있는 CSS 파일을 index.html 파일의 <head> 태그 안에 복붙!
+      -> Bootstarp 설치가 잘 되었는지 테스트 하고싶다
+         1. getbootstrap.com 들어간 후 Documentation 탭으로 이동
+         2. 원하는 레이아웃을 검색 ex) Button
+         3. 그 중에 원하는 버튼의 HTML을 내 App.js에 복붙
+         4. 미리보기에서 버튼이 뜬다면 설치 성공
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+</details>
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-----
