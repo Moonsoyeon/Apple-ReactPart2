@@ -1,9 +1,60 @@
 import './App.css';
+import { Navbar, Nav, NavDropdown, Jumbotron, Button } from 'react-bootstrap';
 
 function App() {
   return (
     <div className="App">
-      <button type="button" class="btn btn-primary">Primary</button>
+      <Navbar bg="light" expand="lg">
+        <Navbar.Brand href="#home">s0ye0nsh0p</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="ml-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+
+      <Jumbotron className = "background">
+        <h1>20% Season OFF</h1>
+        <p>
+          This is a simple hero unit, a simple jumbotron-style component for calling
+          extra attention to featured content or information.
+        </p>
+        <p>
+          <Button variant="primary">Learn more</Button>
+        </p>
+      </Jumbotron>
+
+      <div className="container"> 
+        <div className="row">
+          <div className="col-md-4">
+            <img src = "https://codingapple1.github.io/shop/shoes1.jpg" width = "100%"></img>
+            <h4>Adidas</h4>
+            <p>퍼 자켓 189,000</p>
+          </div>
+          <div className="col-md-4">
+          <img src = "https://codingapple1.github.io/shop/shoes2.jpg" width = "100%"></img>
+            <h4>Nike</h4>
+            <p>레깅스 79,000</p>
+          </div>
+          <div className="col-md-4">
+          <img src = "https://codingapple1.github.io/shop/shoes3.jpg" width = "100%"></img>
+            <h4>Spider</h4>
+            <p>반팔 55,000</p>
+          </div>
+        </div>
+      </div>
+
+
+
     </div>
   );
 }
