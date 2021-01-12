@@ -85,4 +85,50 @@
 
 </details>
 
+<details>
+<summary>2-3</summary>
+코드가 넘나 길어진다면 import / export 사용해보기
+
+    - 데이터바인딩을 하고싶은데 데이터가 너무 길다?
+      -> import / export 문법으로 변수나 함수나 자료형을 다른 파일로 저장해둔 뒤에 불러오기
+      -> data.js에서 App.js 이렇게 변수, 혹은 데이터를 보내려면
+         1. 일단 data.js에서 원하는 데이터를 export 하고
+         2. App.js에서는 data.js를 import 하면 됨
+         ex)
+         (data.js 파일)
+         var 중요데이터 = 'Moon';
+         export default 중요데이터;
+         => 변수명, 함수명, 자료형 전부 배출 가능
+            파일마다 export default 라는 키워드는 하나만 사용 가능
+         (App.js 파일)
+         import 중요데이터 from './data.js';
+         => 변수명이라는 부분은 자유롭게 작성 가능
+            경로 쓸 때, ./ 라는 것은 현재 경로
+      -> 여러개의 변수들을 내보내고 싶으면
+         ex)
+         (data.js 파일)
+         var name1 = 'Moon';
+         var name2 = 'Kim';
+         export default name1, name2;
+         (App.js 파일)
+         import {name1, name2} from './data.js';
+         => 변수명을 자유롭게 작명이 불가능하고 export 했던 변수명 그대로 사용
+
+   - 쇼핑몰 데이터를 state로 저장하고 싶은데 너무 길다, 다른 파일로 빼자
+     -> 1. data.js 에 데이터를 저장하고
+        2. App.js 에 import Data from './data.js';
+        3. 사용하고 싶은 곳에서 let [shoes, shoes변경] = useState(Data);
+
+   - 3개의 상품 데이터를 알맞는 HTML 자리에 데이터바인딩 하기
+     -> ex)
+        ~~~HTML잔뜩~~~
+        <div className = "col-md-4">
+          <img src = "https://codingapple1.github.io/shop/shoes1.jpg" width = "100%" />
+          <h4>{shoes[0].title}</h4>
+          <p>{shoes[0].content} & {shoes[0].price}</p>
+        </div>
+        ~~~shoes[1]~~~
+        ~~~shoes[2]~~~
+        
+</details>
 -----
