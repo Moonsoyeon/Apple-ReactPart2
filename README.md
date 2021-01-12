@@ -192,4 +192,5 @@
         <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg' } width="100%"/>
 
 </details>
+
 -----
