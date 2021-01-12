@@ -179,7 +179,7 @@
            i는 반복문을 돌면서 1씩 증가하는 정수 (0, 1, 2 ...)
 
     - 상품 이미지들 데이터바인딩 하기
-     1. "<img src=”~~~/shoes1.jpg”>" 이렇게 하드코딩 되어있는 코드를
+     1. <img src=”~~~/shoes1.jpg”> 이렇게 하드코딩 되어있는 코드를
      2. <img src={ ~~~ shoes반복문돌때마다1,2,3으로변하는변수.jpg} /> 로 변경
         <img src={ 'https://codingapple1.github.io/shop/shoes' + i + '.jpg' } width="100%"/>
         => i는 map 안에 i라는 변수 (0, 1, 2 ...)
