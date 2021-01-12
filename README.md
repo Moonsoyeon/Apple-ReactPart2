@@ -129,6 +129,67 @@
         </div>
         ~~~shoes[1]~~~
         ~~~shoes[2]~~~
-        
+
+</details>
+
+<details>
+<summary>2-4</summary>
+해설 : 상품목록 Component화 + 반복문
+
+    - 상품 레이아웃 컴포넌트화 하기
+      1. "col-md-4" 라는 div 박스들을 컴포넌트로 만들기
+         function Goods(){
+            return (
+               <div classNmae="col-md-4">
+                 <h4>{ shoes[0].title }</h4>
+                 <p>{ shoes[0].content } & { shoes[0].price }</p>
+               </div>
+            )
+         }
+      2. App(){} 안에 필요한 위치에 <Goods /> 추가
+      3. shoes라는 변수는 App 컴포넌트에 있고 Goods 컴포넌트에 없으니 props로 전송해주기
+         <Goods shoes = {shoes} />
+
+         function Goods(props){
+            return (
+               <div classNmae="col-md-4">
+                 <h4>{ props.shoes[0].title }</h4>
+                 <p>{ props.shoes[0].content } & { props.shoes[0].price }</p>
+               </div>
+            )
+         }
+
+   - 각각의 Goods 컴포넌트마다 다른 데이터 전송해주기
+     -> shoes라는 [{}, {}, {}] 를 전부 다 전송하지 않고 하나의 {} 오브젝트만 각각 전송
+        1. <Card shoes={shoes[0]} />
+           <Card shoes={shoes[1]} />
+           <Card shoes={shoes[2]} />
+        2. <h4>{ props.shoes.title }</h4>
+           <p>{ props.shoes.content } & { props.shoes.price }</p>
+
+   - Goods 컴포넌트 반복문 돌리기
+     -> shoes 라는 state 갯수만큼 돌려야하니까 shoes에 map 붙이기
+        {
+           shoes.map((a, i) => {
+           return <Goods shoes = {shoes{i}} />
+           });
+        }
+        => map 반복문 안에는 2개의 파라미터가 들어갈 수 있음 (a, i)
+           a는 shoes라는 array에 있던 하나하나의 데이터를 의미
+           i는 반복문을 돌면서 1씩 증가하는 정수 (0, 1, 2 ...)
+
+   - 상품 이미지들 데이터바인딩 하기
+     1. <img src=”~~~/shoes1.jpg”> 이렇게 하드코딩 되어있는 코드를
+     2. <img src={ ~~~ shoes반복문돌때마다1,2,3으로변하는변수.jpg} /> 로 변경
+        <img src={ 'https://codingapple1.github.io/shop/shoes' + i + '.jpg' } width="100%"/>
+        => i는 map 안에 i라는 변수 (0, 1, 2 ...)
+     3. i라는 변수는 App 컴포넌트가 가지고 있는 변수이기 때문에 props로 전송
+        { 
+            shoes.map((a,i)=>{
+             return <Card shoes={shoes[i]} i={i} />
+            });
+        }
+        <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + '.jpg' } width="100%"/>
+
 </details>
 -----
