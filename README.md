@@ -114,12 +114,12 @@
          import {name1, name2} from './data.js';
          => 변수명을 자유롭게 작명이 불가능하고 export 했던 변수명 그대로 사용
 
-   - 쇼핑몰 데이터를 state로 저장하고 싶은데 너무 길다, 다른 파일로 빼자
+    - 쇼핑몰 데이터를 state로 저장하고 싶은데 너무 길다, 다른 파일로 빼자
      -> 1. data.js 에 데이터를 저장하고
         2. App.js 에 import Data from './data.js';
         3. 사용하고 싶은 곳에서 let [shoes, shoes변경] = useState(Data);
 
-   - 3개의 상품 데이터를 알맞는 HTML 자리에 데이터바인딩 하기
+    - 3개의 상품 데이터를 알맞는 HTML 자리에 데이터바인딩 하기
      -> ex)
         ~~~HTML잔뜩~~~
         <div className = "col-md-4">
@@ -159,7 +159,7 @@
             )
          }
 
-   - 각각의 Goods 컴포넌트마다 다른 데이터 전송해주기
+    - 각각의 Goods 컴포넌트마다 다른 데이터 전송해주기
      -> shoes라는 [{}, {}, {}] 를 전부 다 전송하지 않고 하나의 {} 오브젝트만 각각 전송
         1. <Card shoes={shoes[0]} />
            <Card shoes={shoes[1]} />
@@ -167,7 +167,7 @@
         2. <h4>{ props.shoes.title }</h4>
            <p>{ props.shoes.content } & { props.shoes.price }</p>
 
-   - Goods 컴포넌트 반복문 돌리기
+    - Goods 컴포넌트 반복문 돌리기
      -> shoes 라는 state 갯수만큼 돌려야하니까 shoes에 map 붙이기
         {
            shoes.map((a, i) => {
@@ -178,8 +178,8 @@
            a는 shoes라는 array에 있던 하나하나의 데이터를 의미
            i는 반복문을 돌면서 1씩 증가하는 정수 (0, 1, 2 ...)
 
-   - 상품 이미지들 데이터바인딩 하기
-     1. <img src=”~~~/shoes1.jpg”> 이렇게 하드코딩 되어있는 코드를
+    - 상품 이미지들 데이터바인딩 하기
+     1. "<img src=”~~~/shoes1.jpg”>" 이렇게 하드코딩 되어있는 코드를
      2. <img src={ ~~~ shoes반복문돌때마다1,2,3으로변하는변수.jpg} /> 로 변경
         <img src={ 'https://codingapple1.github.io/shop/shoes' + i + '.jpg' } width="100%"/>
         => i는 map 안에 i라는 변수 (0, 1, 2 ...)
