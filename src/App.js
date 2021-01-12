@@ -44,14 +44,11 @@ function App() {
         <div className="row">
           {
             shoes.map((a, i) => {
-              return <Goods shoes={shoes[i]}></Goods>
+              return <Goods shoes={shoes[i]} i = {i} key = {i}></Goods>
             })
           }
         </div>
       </div>
-
-
-
     </div>
   );
 }
@@ -59,7 +56,7 @@ function App() {
 function Goods(props) {
   return (
     <div className="col-md-4">
-      <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%"></img>
+      <img src={'https://codingapple1.github.io/shop/shoes' + (props.i + 1) + '.jpg'} width="100%"></img>
       <h4>{props.shoes.title}</h4>
       <p>{props.shoes.content + " & " + props.shoes.price}</p>
     </div>
