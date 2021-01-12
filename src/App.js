@@ -1,7 +1,14 @@
+/*eslint-disable*/
+
+import React, { useState } from 'react';
 import './App.css';
 import { Navbar, Nav, NavDropdown, Jumbotron, Button } from 'react-bootstrap';
+import Data from './data.js';
 
 function App() {
+
+  let [shoes, shoes변경] = useState(Data);
+
   return (
     <div className="App">
       <Navbar bg="light" expand="lg">
@@ -22,7 +29,7 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
 
-      <Jumbotron className = "background">
+      <Jumbotron className="background">
         <h1>20% Season OFF</h1>
         <p>
           This is a simple hero unit, a simple jumbotron-style component for calling
@@ -33,23 +40,13 @@ function App() {
         </p>
       </Jumbotron>
 
-      <div className="container"> 
+      <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <img src = "https://codingapple1.github.io/shop/shoes1.jpg" width = "100%"></img>
-            <h4>Adidas</h4>
-            <p>퍼 자켓 189,000</p>
-          </div>
-          <div className="col-md-4">
-          <img src = "https://codingapple1.github.io/shop/shoes2.jpg" width = "100%"></img>
-            <h4>Nike</h4>
-            <p>레깅스 79,000</p>
-          </div>
-          <div className="col-md-4">
-          <img src = "https://codingapple1.github.io/shop/shoes3.jpg" width = "100%"></img>
-            <h4>Spider</h4>
-            <p>반팔 55,000</p>
-          </div>
+          {
+            shoes.map((a, i) => {
+              return <Goods shoes={shoes[i]}></Goods>
+            })
+          }
         </div>
       </div>
 
@@ -57,6 +54,16 @@ function App() {
 
     </div>
   );
+}
+
+function Goods(props) {
+  return (
+    <div className="col-md-4">
+      <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%"></img>
+      <h4>{props.shoes.title}</h4>
+      <p>{props.shoes.content + " & " + props.shoes.price}</p>
+    </div>
+  )
 }
 
 export default App;
