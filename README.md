@@ -193,4 +193,61 @@
 
 </details>
 
+
+<details>
+<summary>2-5</summary>
+React Router 1 : 셋팅과 기본 라우팅
+
+    - 설치 / 셋팅
+      -> yarn add ract-router-dom
+         (index.js 파일)
+         import { BrowserRouter } from 'react-router-dom';
+         ReactDOM.render(
+           <React.StrictMode>
+             <BrowserRouter>
+               <App/>
+             </BrowserRouter>
+           </React.StrictMode>
+           document.getElementById('root')
+         );
+         => BrowerRouter는 사이트 방문시 주소에 # 없이 깔끔
+         => HashRouter는 사이트 방문시 URL 맨 뒤에 /#/이 붙은 채로 시작
+            원래는 브라우저 주소창에 뭔가 페이지를 입력하면 서버에게 특정 페이지 좀 보여달라는 요청이 됨
+            하지만 현재는 요청할 서버가 없고 그냥 리액트가 라우팅을 담당 중
+            그래서 잘못하면 있지도 않은 페이지를 서버에 요청해서 404 Page Not Found 에러가 뜰 수 있음
+            실수로 서버에게 요청하지 않게 하려면 안전하게 # 붙이기
+            브라우저 주소창에서 # 뒤에 붙은 것들은 절대 서버로 요청되지 않음
+
+    - 라우팅 (페이지 나누기)
+      -> 1. / 여기로 접속하면 메인페이지 보여주기
+         2. /detail 로 접속하면 상세페이지 보여주기
+      -> 라우팅을 하려면
+         1. 여러가지 태그들 import 
+            import { Link, Route, Switch } from 'react-router-dom';
+         2. 원하는 곳에 <Route></Route> 태그 작성
+         3. <Route> 안에 path와 path 방문 시 보여줄 HTML 작성
+            ex)
+            <div>
+              ~~~HTML잔뜩~~~
+              <Route path = "/">
+                <div>메인페이지</div>
+              <Route>
+              <Route path = "/detail">
+                <div>상세페이지</div>
+              <Route>
+            </div>
+         4. 브라우저 주소창에
+            http://localhost:3000/ 로 접속하면 "메인페이지", 
+            http://localhost:3000/detail 로 접속하면 "상세페이지"가 보임
+         => 참고로 <Route path = "/어쩌고" component = {Goods}></Route>를 작성하면 /어쩌고 라는 경로로 접속했을 때 Goods 라는 컴포넌트를 보여줌
+      -> /detail로 접속했는데 왜 상세페이지, 메인페이지 둘 다 보여줘?
+         => /detail 이라고 적으면 / 라는 경로도 포함 되어있음
+            싫으면 / 경로에 exact 라는 속성을 부여해주면 됨
+            ex) 
+            <Route exact path="/"> 
+              <div>메인페이지에요</div> 
+            </Route> 
+
+</details>
+
 -----
