@@ -250,4 +250,47 @@ React Router 1 : 셋팅과 기본 라우팅
 
 </details>
 
+<details>
+<summary>2-6</summary>
+React Router 2 : Link, Switch, history 기능
+
+    - <Detail> 을 다른 파일에 저장해둔 뒤 App.js까지 import 해오기
+      1. src 폴더 내에 Detaill.js 파일을 만들고
+      2. import React from 'react';
+      3. function Detail(){ return( ~~~HTML잔뜩~~~ ) };
+      4. 맨 마지막 줄에 Detail 이라는 함수를 export default Detail
+      5. (App.js 파일) 
+         import Detail from'./Detail.js';
+         <Route path = "/detail">
+           <Detail/>
+         </Route>
+   
+    - Link 태그로 페이지 이동 버튼 만들기
+      -> 상단메뉴(Navbar)로 이동
+         <Nav.Link> <Link to = "/">Home</Link> </Nav.Link>
+         <Nav.Link> <Link to = "/detail">Detail</Link> </Nav.Link>
+         => Link 태그를 사용하고 to 속성을 이용해 경로만 지정해주면 됨
+
+    - 다른 방법으로 페이지 이동 기능 만들기
+      1. import {useHistory} from 'react-router-dom';
+      2. let history = useHistory();
+         -> useHistory() : 페이지 이동 내역 + 여러가지 유용한 함수
+                        history 라는 변수엔 큰 object{} 자료가 하나 저장되어있음
+      3. goBack() : 페이지가 뒤로 간다
+         <button onClick = { () => { history.goBack() }} >뒤로가기</Button>
+      4. push() : 커스텀 페이지로 이동하는 기능을 만들고 싶다
+         <button onClick = { () => { history.push('/') }} >뒤로가기</button>
+
+    - Switch 컴포넌트에 대해 알아보자
+      -> Switch : 매치되는 <Route> 들을 전부 보여주지 말고 한 번에 하나만 보여주세요~
+         => path = "/:id" : /슬래시 뒤에 모든 문자가 오면 이 Route로 안내해주세요~
+            그럼 /detail로 이동하면 (1)<Detail> (2)<div>새로만든route</div> 둘 다 보여줌
+            왜냐면 리액트 라우터는 그냥 URL 매치되는 것들 전부 다 보여주니깐
+            한 번에 하나의 <Route>만 보여주고 싶다?
+            => <Route>들을 위에서 import 해온 <Switch> 태그로 감싸면 됨
+               감싸주면 여러 개의 Route가 매칭이 되어도 맨 위의 Route 하나만 보여줌
+               이걸 응용하면 / 경로 문제도, exact도 쓰지 않고 해결 가능
+
+</details>
+
 -----
