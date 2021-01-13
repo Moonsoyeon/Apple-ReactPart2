@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import './App.css';
 import { Navbar, Nav, NavDropdown, Jumbotron, Button } from 'react-bootstrap';
 import Data from './data.js';
-
+import Detail from './Detail.js';
 import { Link, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -17,9 +17,9 @@ function App() {
         <Navbar.Brand href="#home">s0ye0nsh0p</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+          <Nav className="mr-auto">
+            <Nav.Link><Link to="/">Home</Link></Nav.Link>
+            <Nav.Link><Link to="/detail">Detail</Link></Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -31,45 +31,40 @@ function App() {
         </Navbar.Collapse>
       </Navbar>
 
-      <Route exact path="/">
-        <Jumbotron className="background">
-          <h1>20% Season OFF</h1>
-          <p>
-            This is a simple hero unit, a simple jumbotron-style component for calling
-            extra attention to featured content or information.
+      <Switch>
+  
+        <Route exact path="/"> 
+          <Jumbotron className="background">
+            <h1>20% Season OFF</h1>
+            <p>
+              This is a simple hero unit, a simple jumbotron-style component for calling
+              extra attention to featured content or information.
         </p>
-          <p>
-            <Button variant="primary">Learn more</Button>
-          </p>
-        </Jumbotron>
+            <p>
+              <Button variant="primary">Learn more</Button>
+            </p>
+          </Jumbotron>
 
-        <div className="container">
-          <div className="row">
-            {
-              shoes.map((a, i) => {
-                return <Goods shoes={shoes[i]} i={i} key={i}></Goods>
-              })
-            }
-          </div>
-        </div>
-      </Route>
-
-      <Route exact path="/detail">
-        <div className="container">
-          <div className="row">
-            <div className="col-md-6">
-              <img src="https://codingapple1.github.io/shop/shoes1.jpg" width="100%" />
-            </div>
-            <div className="col-md-6 mt-4">
-              <h4 className="pt-5">상품명</h4>
-              <p>상품설명</p>
-              <p>120000원</p>
-              <button className="btn btn-danger">주문하기</button>
+          <div className="container">
+            <div className="row">
+              {
+                shoes.map((a, i) => {
+                  return <Goods shoes={shoes[i]} i={i} key={i}></Goods>
+                })
+              }
             </div>
           </div>
-        </div>
-      </Route>
+        </Route>
 
+        <Route exact path="/detail">
+          <Detail />
+        </Route>
+
+        <Route path="/:id">
+          <div>아무거나 적었을 때 이거 보여조라</div>
+        </Route>
+
+      </Switch>
       {/*<Route path = "/어쩌구" component = {Modal}></Route>*/}
 
     </div>
