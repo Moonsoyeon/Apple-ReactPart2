@@ -72,31 +72,40 @@ Bootstarp 설치가 잘 되었는지 테스트 하고싶다
 
 <details>
 <summary>2-2</summary>
-평화로운 쇼핑몰 레이아웃 디자인시간
 
-    - Bootstrap을 이용한 레이아웃 디자인
-      -> 상단메뉴(Navbar) 만들기
-         1. react bootstrap 공식사이트 Component 메뉴에서 navbar 검색
-         2. 마음에 드는 navbear의 HTML 예제코드를 복붙
-         3. import { Navbar } from 'react-bootstrap'; (딸려온 컴포넌트들도 전부 import 해줘야 함)
-      -> 대문(Jumbotron) 만들기
-         navbar와 똑같이 작업 ㄱㄱ 
-         배경이미지를 넣으려면 
-         1. <Jumbotron className="background">
-         2. CSS 파일로 가서 .background{} 안에 스타일 작성
-         3. src 폴더에 이미지파일을 옮겨서 ./image.jpg
-      -> 상품 레이아웃 만들기
-         상품 이미지를 가로로 3개, 모바일에선 세로 1열로 진열하고 싶다 (가로 3분할)
-         Bootstrap 사용하기
-         <div className="col-md-4">상품1</div>
-         <div className="col-md-4">상품2</div>
-         <div className="col-md-4">상품3</div>
+### 평화로운 쇼핑몰 레이아웃 디자인시간
+
+Bootstrap을 이용한 레이아웃 디자인
+
+상단메뉴(Navbar) 만들기
+```
+1. react bootstrap 공식사이트 Component 메뉴에서 navbar 검색
+2. 마음에 드는 navbear의 HTML 예제코드를 복붙
+3. import { Navbar } from 'react-bootstrap'; (딸려온 컴포넌트들도 전부 import 해줘야 함)
+```
+대문(Jumbotron) 만들기
+```
+navbar와 똑같이 작업 ㄱㄱ 
+배경이미지를 넣으려면 
+  1. <Jumbotron className="background">
+  2. CSS 파일로 가서 .background{} 안에 스타일 작성
+  3. src 폴더에 이미지파일을 옮겨서 ./image.jpg
+```
+상품 레이아웃 만들기
+```
+상품 이미지를 가로로 3개, 모바일에선 세로 1열로 진열하고 싶다 (가로 3분할)
+  Bootstrap 사용하기
+  <div className="col-md-4">상품1</div>
+  <div className="col-md-4">상품2</div>
+  <div className="col-md-4">상품3</div>
+```
 
 </details>
 
 <details>
 <summary>2-3</summary>
-코드가 넘나 길어진다면 import / export 사용해보기
+
+### 코드가 넘나 길어진다면 import / export 사용해보기
 
     - 데이터바인딩을 하고싶은데 데이터가 너무 길다?
       -> import / export 문법으로 변수나 함수나 자료형을 다른 파일로 저장해둔 뒤에 불러오기
@@ -143,7 +152,8 @@ Bootstarp 설치가 잘 되었는지 테스트 하고싶다
 
 <details>
 <summary>2-4</summary>
-해설 : 상품목록 Component화 + 반복문
+
+### 해설 : 상품목록 Component화 + 반복문
 
     - 상품 레이아웃 컴포넌트화 하기
       1. "col-md-4" 라는 div 박스들을 컴포넌트로 만들기
@@ -205,7 +215,8 @@ Bootstarp 설치가 잘 되었는지 테스트 하고싶다
 
 <details>
 <summary>2-5</summary>
-React Router 1 : 셋팅과 기본 라우팅
+
+### React Router 1 : 셋팅과 기본 라우팅
 
     - 설치 / 셋팅
       -> yarn add ract-router-dom
@@ -261,7 +272,8 @@ React Router 1 : 셋팅과 기본 라우팅
 
 <details>
 <summary>2-6</summary>
-React Router 2 : Link, Switch, history 기능
+
+### React Router 2 : Link, Switch, history 기능
 
     - <Detail> 을 다른 파일에 저장해둔 뒤 App.js까지 import 해오기
       1. src 폴더 내에 Detaill.js 파일을 만들고
