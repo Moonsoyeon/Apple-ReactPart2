@@ -86,6 +86,7 @@ Bootstarp 설치가 잘 되었는지 테스트 하고싶다
 대문(Jumbotron) 만들기
 ```
 navbar와 똑같이 작업 ㄱㄱ 
+
 배경이미지를 넣으려면 
   1. <Jumbotron className="background">
   2. CSS 파일로 가서 .background{} 안에 스타일 작성
@@ -120,6 +121,7 @@ data.js에서 App.js 이렇게 변수, 혹은 데이터를 보내려면
    export default 중요데이터;
      => 변수명, 함수명, 자료형 전부 배출 가능
         파일마다 export default 라는 키워드는 하나만 사용 가능
+
    (App.js 파일)
    import 중요데이터 from './data.js';
      => 변수명이라는 부분은 자유롭게 작성 가능
@@ -229,55 +231,60 @@ shoes 라는 state 갯수만큼 돌려야하니까 shoes에 map 붙이기
 
 ### React Router 1 : 셋팅과 기본 라우팅
 
-    - 설치 / 셋팅
-      -> yarn add ract-router-dom
-         (index.js 파일)
-         import { BrowserRouter } from 'react-router-dom';
-         ReactDOM.render(
-           <React.StrictMode>
-             <BrowserRouter>
-               <App/>
-             </BrowserRouter>
-           </React.StrictMode>
-           document.getElementById('root')
-         );
-         => BrowerRouter는 사이트 방문시 주소에 # 없이 깔끔
-         => HashRouter는 사이트 방문시 URL 맨 뒤에 /#/이 붙은 채로 시작
-            원래는 브라우저 주소창에 뭔가 페이지를 입력하면 서버에게 특정 페이지 좀 보여달라는 요청이 됨
-            하지만 현재는 요청할 서버가 없고 그냥 리액트가 라우팅을 담당 중
-            그래서 잘못하면 있지도 않은 페이지를 서버에 요청해서 404 Page Not Found 에러가 뜰 수 있음
-            실수로 서버에게 요청하지 않게 하려면 안전하게 # 붙이기
-            브라우저 주소창에서 # 뒤에 붙은 것들은 절대 서버로 요청되지 않음
+설치 / 셋팅
+```
+yarn add ract-router-dom
+(index.js 파일)
+import { BrowserRouter } from 'react-router-dom';
+ReactDOM.render(
+   <React.StrictMode>
+      <BrowserRouter>
+      <App/>
+      </BrowserRouter>
+   </React.StrictMode>
+   document.getElementById('root')
+);
+   => BrowerRouter는 사이트 방문시 주소에 # 없이 깔끔
+   => HashRouter는 사이트 방문시 URL 맨 뒤에 /#/이 붙은 채로 시작
+      원래는 브라우저 주소창에 뭔가 페이지를 입력하면 서버에게 특정 페이지 좀 보여달라는 요청이 됨
+      하지만 현재는 요청할 서버가 없고 그냥 리액트가 라우팅을 담당 중
+      그래서 잘못하면 있지도 않은 페이지를 서버에 요청해서 404 Page Not Found 에러가 뜰 수 있음
+      실수로 서버에게 요청하지 않게 하려면 안전하게 # 붙이기
+      브라우저 주소창에서 # 뒤에 붙은 것들은 절대 서버로 요청되지 않음
+```
+라우팅 (페이지 나누기)
+```
+1. / 여기로 접속하면 메인페이지 보여주기
+2. /detail 로 접속하면 상세페이지 보여주기
 
-    - 라우팅 (페이지 나누기)
-      -> 1. / 여기로 접속하면 메인페이지 보여주기
-         2. /detail 로 접속하면 상세페이지 보여주기
-      -> 라우팅을 하려면
-         1. 여러가지 태그들 import 
-            import { Link, Route, Switch } from 'react-router-dom';
-         2. 원하는 곳에 <Route></Route> 태그 작성
-         3. <Route> 안에 path와 path 방문 시 보여줄 HTML 작성
-            ex)
-            <div>
-              ~~~HTML잔뜩~~~
-              <Route path = "/">
-                <div>메인페이지</div>
-              <Route>
-              <Route path = "/detail">
-                <div>상세페이지</div>
-              <Route>
-            </div>
-         4. 브라우저 주소창에
-            http://localhost:3000/ 로 접속하면 "메인페이지", 
-            http://localhost:3000/detail 로 접속하면 "상세페이지"가 보임
-         => 참고로 <Route path = "/어쩌고" component = {Goods}></Route>를 작성하면 /어쩌고 라는 경로로 접속했을 때 Goods 라는 컴포넌트를 보여줌
-      -> /detail로 접속했는데 왜 상세페이지, 메인페이지 둘 다 보여줘?
-         => /detail 이라고 적으면 / 라는 경로도 포함 되어있음
-            싫으면 / 경로에 exact 라는 속성을 부여해주면 됨
-            ex) 
-            <Route exact path="/"> 
-              <div>메인페이지에요</div> 
-            </Route> 
+라우팅을 하려면
+   1. 여러가지 태그들 import 
+      import { Link, Route, Switch } from 'react-router-dom';
+   2. 원하는 곳에 <Route></Route> 태그 작성
+   3. <Route> 안에 path와 path 방문 시 보여줄 HTML 작성
+      ex)
+      <div>
+         ~~~HTML잔뜩~~~
+         <Route path = "/">
+            <div>메인페이지</div>
+         <Route>
+         <Route path = "/detail">
+            <div>상세페이지</div>
+         <Route>
+      </div>
+   4. 브라우저 주소창에
+      http://localhost:3000/ 로 접속하면 "메인페이지", 
+      http://localhost:3000/detail 로 접속하면 "상세페이지"가 보임
+   => 참고로 <Route path = "/어쩌고" component = {Goods}></Route>를 작성하면 /어쩌고 라는 경로로 접속했을 때 Goods 라는 컴포넌트를 보여줌
+      
+/detail로 접속했는데 왜 상세페이지, 메인페이지 둘 다 보여줘?
+   => /detail 이라고 적으면 / 라는 경로도 포함 되어있음
+      싫으면 / 경로에 exact 라는 속성을 부여해주면 됨
+      ex) 
+      <Route exact path="/"> 
+         <div>메인페이지에요</div> 
+      </Route> 
+```
 
 </details>
 
@@ -286,42 +293,47 @@ shoes 라는 state 갯수만큼 돌려야하니까 shoes에 map 붙이기
 
 ### React Router 2 : Link, Switch, history 기능
 
-    - <Detail> 을 다른 파일에 저장해둔 뒤 App.js까지 import 해오기
-      1. src 폴더 내에 Detaill.js 파일을 만들고
-      2. import React from 'react';
-      3. function Detail(){ return( ~~~HTML잔뜩~~~ ) };
-      4. 맨 마지막 줄에 Detail 이라는 함수를 export default Detail
-      5. (App.js 파일) 
-         import Detail from'./Detail.js';
-         <Route path = "/detail">
-           <Detail/>
-         </Route>
-   
-    - Link 태그로 페이지 이동 버튼 만들기
-      -> 상단메뉴(Navbar)로 이동
-         <Nav.Link> <Link to = "/">Home</Link> </Nav.Link>
-         <Nav.Link> <Link to = "/detail">Detail</Link> </Nav.Link>
-         => Link 태그를 사용하고 to 속성을 이용해 경로만 지정해주면 됨
-
-    - 다른 방법으로 페이지 이동 기능 만들기
-      1. import {useHistory} from 'react-router-dom';
-      2. let history = useHistory();
-         -> useHistory() : 페이지 이동 내역 + 여러가지 유용한 함수
-                        history 라는 변수엔 큰 object{} 자료가 하나 저장되어있음
-      3. goBack() : 페이지가 뒤로 간다
-         <button onClick = { () => { history.goBack() }} >뒤로가기</Button>
-      4. push() : 커스텀 페이지로 이동하는 기능을 만들고 싶다
-         <button onClick = { () => { history.push('/') }} >뒤로가기</button>
-
-    - Switch 컴포넌트에 대해 알아보자
-      -> Switch : 매치되는 <Route> 들을 전부 보여주지 말고 한 번에 하나만 보여주세요~
-         => path = "/:id" : /슬래시 뒤에 모든 문자가 오면 이 Route로 안내해주세요~
-            그럼 /detail로 이동하면 (1)<Detail> (2)<div>새로만든route</div> 둘 다 보여줌
-            왜냐면 리액트 라우터는 그냥 URL 매치되는 것들 전부 다 보여주니깐
-            한 번에 하나의 <Route>만 보여주고 싶다?
-            => <Route>들을 위에서 import 해온 <Switch> 태그로 감싸면 됨
-               감싸주면 여러 개의 Route가 매칭이 되어도 맨 위의 Route 하나만 보여줌
-               이걸 응용하면 / 경로 문제도, exact도 쓰지 않고 해결 가능
+<Detail> 을 다른 파일에 저장해둔 뒤 App.js까지 import 해오기
+```
+1. src 폴더 내에 Detaill.js 파일을 만들고
+2. import React from 'react';
+3. function Detail(){ return( ~~~HTML잔뜩~~~ ) };
+4. 맨 마지막 줄에 Detail 이라는 함수를 export default Detail
+5. (App.js 파일) 
+   import Detail from'./Detail.js';
+   <Route path = "/detail">
+      <Detail/>
+   </Route>
+```   
+Link 태그로 페이지 이동 버튼 만들기
+```
+상단메뉴(Navbar)로 이동
+   <Nav.Link> <Link to = "/">Home</Link> </Nav.Link>
+   <Nav.Link> <Link to = "/detail">Detail</Link> </Nav.Link>
+   => Link 태그를 사용하고 to 속성을 이용해 경로만 지정해주면 됨
+```
+다른 방법으로 페이지 이동 기능 만들기
+```
+1. import {useHistory} from 'react-router-dom';
+2. let history = useHistory();
+   -> useHistory() : 페이지 이동 내역 + 여러가지 유용한 함수
+                     history 라는 변수엔 큰 object{} 자료가 하나 저장되어있음
+3. goBack() : 페이지가 뒤로 간다
+   <button onClick = { () => { history.goBack() }} >뒤로가기</Button>
+4. push() : 커스텀 페이지로 이동하는 기능을 만들고 싶다
+   <button onClick = { () => { history.push('/') }} >뒤로가기</button>
+```
+Switch 컴포넌트에 대해 알아보자
+```
+Switch : 매치되는 <Route> 들을 전부 보여주지 말고 한 번에 하나만 보여주세요~
+   => path = "/:id" : /슬래시 뒤에 모든 문자가 오면 이 Route로 안내해주세요~
+      그럼 /detail로 이동하면 (1)<Detail> (2)<div>새로만든route</div> 둘 다 보여줌
+      왜냐면 리액트 라우터는 그냥 URL 매치되는 것들 전부 다 보여주니깐
+      한 번에 하나의 <Route>만 보여주고 싶다?
+      => <Route>들을 위에서 import 해온 <Switch> 태그로 감싸면 됨
+         감싸주면 여러 개의 Route가 매칭이 되어도 맨 위의 Route 하나만 보여줌
+         이걸 응용하면 / 경로 문제도, exact도 쓰지 않고 해결 가능
+```
 
 </details>
 
