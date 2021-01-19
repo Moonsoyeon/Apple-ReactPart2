@@ -1,6 +1,6 @@
 [CodingApple](https://online.codingapple.com/course/react-basic/)
 
-### React 리액트 기초부터 쇼핑몰 프로젝트까지!
+## React 리액트 기초부터 쇼핑몰 프로젝트까지!
 <details>
 <summary>배울 내용</summary>
 
@@ -41,6 +41,7 @@ npm, nsx install을 사용했을 때 설치가 오래 걸린다면?
 
 ```
 구글에 'yarn 1' 검색 후 installer 설치 + 컴퓨터 재시작
+
 yarn : npm보다 훨씬 빠른 라이브러리 설치 속도, 안정성을 자랑
        npm install ~~ => yarn add ~~
        npm run start => yarn start
@@ -52,16 +53,20 @@ yarn : npm보다 훨씬 빠른 라이브러리 설치 속도, 안정성을 자�
 shop이라는 폴더를 VScode 에디터로 오픈한 뒤 코딩 시작~
 터미널에서 yarn start 명령어로 미리보기 띄우기
 ```
-    - CSS 쌩코딩하기 귀찮다? Bootstrap 라이브러리를 설치하자
-      -> Bootstrap은 원조 라이브러리이고, 리액트에 맞게 변형한 React Bootstrap을 설치
-         터미널에서 npm install react-bootstrap bootstrap 또는 yarn add react-bootstrap bootstrap
-      -> 때에 따라 특정 스타일을 사용할 때 Bootstrap CSS 파일을 요구하는 경우가 있음
-         사이트에 있는 CSS 파일을 index.html 파일의 <head> 태그 안에 복붙!
-      -> Bootstarp 설치가 잘 되었는지 테스트 하고싶다
-         1. getbootstrap.com 들어간 후 Documentation 탭으로 이동
-         2. 원하는 레이아웃을 검색 ex) Button
-         3. 그 중에 원하는 버튼의 HTML을 내 App.js에 복붙
-         4. 미리보기에서 버튼이 뜬다면 설치 성공
+CSS 쌩코딩하기 귀찮다? Bootstrap 라이브러리를 설치하자
+```
+Bootstrap은 원조 라이브러리이고, 리액트에 맞게 변형한 React Bootstrap을 설치
+터미널에서 npm install react-bootstrap bootstrap 또는 yarn add react-bootstrap bootstrap
+
+때에 따라 특정 스타일을 사용할 때 Bootstrap CSS 파일을 요구하는 경우가 있음
+사이트에 있는 CSS 파일을 index.html 파일의 <head> 태그 안에 복붙!
+
+Bootstarp 설치가 잘 되었는지 테스트 하고싶다
+  1. getbootstrap.com 들어간 후 Documentation 탭으로 이동
+  2. 원하는 레이아웃을 검색 ex) Button
+  3. 그 중에 원하는 버튼의 HTML을 내 App.js에 복붙
+  4. 미리보기에서 버튼이 뜬다면 설치 성공
+```
 
 </details>
 
