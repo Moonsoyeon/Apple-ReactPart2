@@ -36,9 +36,9 @@
 <summary>2-1</summary>
 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
 
-    - npm, nsx install을 사용했을 때 설치가 오래 걸린다면?
+    ###npm, nsx install을 사용했을 때 설치가 오래 걸린다면?
    ```
-      -> 구글에 'yarn 1' 검색 후 installer 설치 + 컴퓨터 재시작
+      구글에 'yarn 1' 검색 후 installer 설치 + 컴퓨터 재시작
          yarn : npm보다 훨씬 빠른 라이브러리 설치 속도, 안정성을 자랑
                 npm install ~~ => yarn add ~~
                 npm run start => yarn start
