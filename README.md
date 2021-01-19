@@ -293,7 +293,7 @@ ReactDOM.render(
 
 ### React Router 2 : Link, Switch, history 기능
 
-<Detail> 을 다른 파일에 저장해둔 뒤 App.js까지 import 해오기
+< Detail > 을 다른 파일에 저장해둔 뒤 App.js까지 import 해오기
 ```
 1. src 폴더 내에 Detaill.js 파일을 만들고
 2. import React from 'react';
