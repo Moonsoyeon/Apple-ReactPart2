@@ -35,7 +35,7 @@
 <details>
 <summary>2-1</summary>
 
-## 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
+### 쇼핑몰 프로젝트 : 프로젝트 생성 & Bootstrap 설치
 
 npm, nsx install을 사용했을 때 설치가 오래 걸린다면?
 
