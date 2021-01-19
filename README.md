@@ -39,18 +39,19 @@
 
 npm, nsx install을 사용했을 때 설치가 오래 걸린다면?
 
-   ```
-      구글에 'yarn 1' 검색 후 installer 설치 + 컴퓨터 재시작
-         yarn : npm보다 훨씬 빠른 라이브러리 설치 속도, 안정성을 자랑
-                npm install ~~ => yarn add ~~
-                npm run start => yarn start
-   ```
-    - 새로운 프로젝트 생성
-      -> 작업 폴더를 VScode 에디터로 오픈한 뒤 터미널 오픈
-         리액트 설치 명령어 입력 npx create-react-app shop
-         shop이라는 폴더를 VScode 에디터로 오픈한 뒤 코딩 시작~
-         터미널에서 yarn start 명령어로 미리보기 띄우기
-
+```
+구글에 'yarn 1' 검색 후 installer 설치 + 컴퓨터 재시작
+yarn : npm보다 훨씬 빠른 라이브러리 설치 속도, 안정성을 자랑
+       npm install ~~ => yarn add ~~
+       npm run start => yarn start
+```
+새로운 프로젝트 생성
+```
+작업 폴더를 VScode 에디터로 오픈한 뒤 터미널 오픈
+리액트 설치 명령어 입력 npx create-react-app shop
+shop이라는 폴더를 VScode 에디터로 오픈한 뒤 코딩 시작~
+터미널에서 yarn start 명령어로 미리보기 띄우기
+```
     - CSS 쌩코딩하기 귀찮다? Bootstrap 라이브러리를 설치하자
       -> Bootstrap은 원조 라이브러리이고, 리액트에 맞게 변형한 React Bootstrap을 설치
          터미널에서 npm install react-bootstrap bootstrap 또는 yarn add react-bootstrap bootstrap
