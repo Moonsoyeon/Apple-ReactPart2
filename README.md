@@ -295,7 +295,7 @@ ReactDOM.render(
 
 < Detail > 을 다른 파일에 저장해둔 뒤 App.js까지 import 해오기
 ```
-1. src 폴더 내에 Detaill.js 파일을 만들고
+1. src 폴더 내에 Detail.js 파일을 만들고
 2. import React from 'react';
 3. function Detail(){ return( ~~~HTML잔뜩~~~ ) };
 4. 맨 마지막 줄에 Detail 이라는 함수를 export default Detail
